@@ -1,0 +1,32 @@
+To revise
+Query - adminAccounts --------------
+Query - customerAccounts -------------
+Query - handymanAccounts --------------
+Sorting - sessionSort -----------------
+handymanAccounts - viewButton
+query - PDO -----------------------
+Design UI ----------------------
+Design Modal
+updates of maintenance (may kulang sa query dahil kasama nya yung sarili sa paghahanap kung may kapareho. aalisin yun)
+
+To add
+Query - Add service to handyman ----------------------
+Query And Result - reported number for customer and handyman ----------------------
+Post for each modal ;;;;;;;;;;;;;;;;;;;
+color of read and unread -----------------------------
+Verification of account - requirements of handyman and verifying their account. ------------////
+Notification for each report: Customer
+							  Handyman
+
+Button
+Add reviewed button customer (adminNotification) ----------------
+Add reviewed button handyman (adminNotification) -------------------
+
+Form
+Add form for reviewed button customer (adminNotification) -----------------
+Add form for reviewed button handyman (adminNotification) --------------------
+
+Database
+type (Lagyan ng foreign key) ;;;;;;;;;;;;;;;;;;;;;;;;
+feedback - userID who feedback. ------------------
+

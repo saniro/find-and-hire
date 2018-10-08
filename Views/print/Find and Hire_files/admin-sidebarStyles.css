@@ -1,0 +1,105 @@
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 136, 205);
+  overflow-x: hidden;
+  padding-top: 54px;
+  font-family: Century Gothic;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .sub-menu {
+  padding: 10px 8px 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  padding-left: 20px;
+  border-bottom-style: solid;
+  border-color: rgb(240,240,240);
+  border-bottom-width: 1px;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .sub-menu:hover {
+  background-color: white;
+  color: rgb(0, 136, 205);
+}
+
+/* Main content */
+.main {
+  margin-left: 250px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: white;
+  color: rgb(0, 136, 205);
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.submenu-container {
+  display: none;
+  background-color: rgb(255, 255, 255);
+  padding-left: 8px;
+}
+
+.submenu-container a {
+  background-color: rgb(0, 136, 205);
+}
+
+.iconDown{
+  float: right;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  margin-top: 3px;
+  padding: 3px;
+  margin-right: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.iconDown:hover{
+  float: right;
+  border-style: solid;
+  border-color: rgb(0, 136, 205);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  margin-top: 3px;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.sub-menu{
+  font-family: Century Gothic;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.badge{
+    background-color: rgba(76, 175, 80, 1);
+    padding-right: 3px;
+    padding-left: 7px;
+    border-radius: 10px;
+    margin-right: 10px;
+    color: white;
+}

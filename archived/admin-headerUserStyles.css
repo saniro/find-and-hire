@@ -1,0 +1,64 @@
+.user{
+	text-align: right;
+	margin-right: 100px;
+	margin-top: -70px;
+    margin-bottom: 10px;
+	font-family: Century Gothic;
+}
+.userPic img{ 
+	padding-bottom: 20px;
+	margin-top: -63px;
+	margin-left: 1280px;
+    margin-bottom: 15px;
+	width: 60px;
+	height: 60px;
+}
+
+.log-out{
+	border: none;
+	font-family: Century Gothic;
+    background-color: #f9f9f9;
+    color: black;
+    text-align: left;
+    padding: 12px 18px;
+    font-size: 16px;
+    width: 190;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.log-out:hover{
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.dropdownUser {
+	font-family: Century Gothic;
+	width: 10px;
+    position: relative;
+}
+
+.dropdownUser-content {
+    display: none;
+    position: absolute;
+    margin-left: 1155px;
+    background-color: #f9f9f9;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: -30px;
+    height: 500%;
+}
+
+.dropdownUser-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownUser-content a:hover {background-color: #f1f1f1}
+
+.dropdownUser:hover .dropdownUser-content {
+    display: block;
+}

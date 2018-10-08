@@ -1,0 +1,166 @@
+.div h1{
+	font-size: 30px;
+}
+
+.top-div h1{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.div{
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 17px;
+	padding-bottom: 10px;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .5);
+	text-align: center;
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 205px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.top-div{
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 17px;
+	padding-bottom: 10px;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .5);
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 425px;
+	/*height: 245px;*/
+	height: 375px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.top-div table{
+	border-collapse: collapse;
+    width: 100%;
+}
+
+.top-div td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.top-div td{
+	background-color: #fff;
+}
+
+.top-services{
+	top: 210px;
+	left: 920px;	
+}
+
+.top-customers{
+	top: 600px;
+	left: 920px;	
+}
+
+.top-accused{
+	top: 990px;
+	left: 920px;	
+}
+
+.header{
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .5);
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 900px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.dateDivision{
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .5);
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 900px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.select{
+	margin-left: 30px;
+}
+
+.printReport{
+	margin-left: 20px;
+}
+
+.datePosition{
+	margin-top: 75px;
+	padding-left: 20px;
+}
+
+.bookingThisDay{
+	top: 990px;
+	left: 260px;
+}
+
+.aveBooking{
+	top: 1120px;
+	left: 260px;
+}
+
+.transactionThisDay{
+	top: 990px;
+	left: 480px;
+}
+
+.aveTransaction{
+	top: 1120px;
+	left: 480px;
+}
+
+.serviceSuggestion{
+	top: 1250px;
+	left: 260px;
+}
+
+.reportsThisDay{
+	top: 990px;
+	left: 700px;
+}
+
+.aveReports{
+	top: 1120px;
+	left: 700px;
+}
+
+.services-availed {
+	position: absolute;
+	top: 210px;
+	left: 260px;
+	width:645px;
+	background-color: rgba(255, 255, 255, .5);
+	padding-top: 24px;
+	padding-bottom: 29px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.report-transaction {
+	position: absolute;
+	top: 600px;
+	left: 260px;
+	width:645px;
+	background-color: rgba(255, 255, 255, .5);
+	padding-top: 24px;
+	padding-bottom: 29px;
+	margin-bottom: 20px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}

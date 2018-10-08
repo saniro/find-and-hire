@@ -1,0 +1,223 @@
+body{
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.title{
+    font-family: Century Gothic;
+    font-size: 25px;
+    color: black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.serviceOptionDesc{
+    z-index: 1;
+}
+
+.serviceOptionsDescContents{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: century gothic;
+    border-collapse: collapse;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 0 10px 0px #DCDCDC;
+}
+
+.serviceDescTable{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 7px;
+    font-size: 15px;
+}
+
+.titleOption{
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.titleServiceDetails{
+    margin-top: 4px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.contents{
+    position: absolute;
+}
+#serviceTable{
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: century gothic;
+    border-collapse: collapse;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: 0 0 10px 0px #DCDCDC;
+    width: 100%;
+}
+
+#userTableArchived{
+    margin: auto;
+    background-color: rgba(255, 255, 255,);
+    text-align: left;
+    font-family: century gothic;
+    border-collapse: collapse;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 100%;
+}
+
+.optionDescInfo{
+    margin-top: 8px;
+    width: 100%;
+    font-size: 14px;
+    height: 150px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    resize: none;
+}
+
+.backButton{
+    background-color: rgb(76, 175, 80);
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width:  100%;
+    cursor: pointer;
+}
+
+.backButton:hover{
+    background-color: rgba(76, 175, 80, .5);
+}
+
+.addSubmit{
+    background-color: rgb(76, 175, 80);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width:  100%;
+    cursor: pointer;
+}
+.actionStyle{
+    background-color: rgba(255, 255, 255, .0);
+}
+thead{
+    width: 100%;
+}
+
+th{
+	padding: 10px;	
+}
+td{
+	padding: 10px;
+}
+
+#actionTable{
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: century gothic;
+    border-collapse: collapse;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: rgb(220, 220, 220);
+    box-shadow: 0 0 10px 0px #DCDCDC;
+    width: 100%;
+}
+
+.actions{
+    background-color: white;
+}
+
+.linkSort{
+    font-family: Century Gothic;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: -40px;
+}
+
+.nothing {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0);
+}
+
+.dropdownSort {
+    float: left;
+    display: inline;
+}
+
+.dropdownSort a, .dropbtnSort {
+    color: black;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.dropdownSort a:hover, .dropdownSort:hover .dropbtnSort {
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+}
+
+li..dropdownSort {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdownSort:hover .dropdown-content {
+    display: block;
+}
+
+.viewPictureDiv{
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: century gothic;
+    border-collapse: collapse;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-shadow: 0 0 10px 0px #DCDCDC;
+}

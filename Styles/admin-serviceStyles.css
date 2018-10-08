@@ -1,0 +1,154 @@
+body{
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#serviceTable{
+	margin: auto;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: century gothic;
+    border-collapse: collapse;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: 0 0 10px 0px #DCDCDC;
+    width: 100%;
+}
+
+#userTableArchived{
+    margin: auto;
+    background-color: rgba(255, 255, 255,);
+    text-align: left;
+    font-family: century gothic;
+    border-collapse: collapse;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 100%;
+}
+
+#actionTable{
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: century gothic;
+    border-collapse: collapse;
+    width: 100%;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: rgb(220, 220, 220);
+    box-shadow: 0 0 10px 0px #DCDCDC;
+}
+
+.title{
+    font-family: Century Gothic;
+    font-size: 25px;
+    color: black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.inputs input[type=text], input[type=date], input[type=email]{
+    margin-top: 8px;
+    font-size: 14px;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 15px;
+    margin-bottom: 8px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+.addSubmit{
+    background-color: rgb(76, 175, 80);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width:  100%;
+    cursor: pointer;
+}
+thead{
+    width: 100%;
+}
+
+th{
+	padding: 10px;	
+}
+td{
+	padding: 10px;
+}
+
+.actions{
+    background-color: white;
+}
+
+.linkSort{
+    font-family: Century Gothic;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: -40px;
+}
+
+.nothing {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0);
+}
+
+.dropdownSort {
+    float: left;
+    display: inline;
+}
+
+.dropdownSort a, .dropbtnSort {
+    color: black;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.dropdownSort a:hover, .dropdownSort:hover .dropbtnSort {
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+}
+
+li..dropdownSort {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdownSort:hover .dropdown-content {
+    display: block;
+}

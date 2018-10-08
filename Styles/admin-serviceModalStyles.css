@@ -1,0 +1,175 @@
+.viewAddModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewAddModal-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+}
+
+/* The Close Button */
+.viewAddClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewAddClose:hover,
+.viewAddClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewModalYesno {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModalYesno-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    padding-bottom: 33px;
+}
+
+/* The Close Button */
+.viewCloseYesno {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewCloseYesno:hover,
+.viewCloseYesno:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewModalArchived {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(232, 232, 232); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content */
+.viewModalArchived-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: rgb(232, 232, 232);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    margin-bottom: 140px;
+}
+
+/* The Close Button */
+.viewCloseArchived {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewCloseArchived:hover,
+.viewCloseArchived:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewEditModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewEditModal-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+}
+
+/* The Close Button */
+.viewEditClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewEditClose:hover,
+.viewEditClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.details div{
+	margin-bottom: 10px;
+}
+
+.titleDetails{
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+
+.noButton{
+	margin-left: 40px;
+}

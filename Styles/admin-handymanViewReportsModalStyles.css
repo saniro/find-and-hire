@@ -1,0 +1,209 @@
+.viewModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModal-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    margin-bottom: 60px;
+
+}
+
+/* The Close Button */
+.viewClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewClose:hover,
+.viewClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewReviewModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewReviewModal-content {
+    font-family: Century Gothic;
+    font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+}
+
+/* The Close Button */
+.viewReviewClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewReviewClose:hover,
+.viewReviewClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.titleDetails{
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.customerWholeInfo{
+    width:46.95%;
+    padding: 10px;
+    border:1px solid #ADADAD;
+    display:inline-block;
+}
+.customerWholeInfo div{
+    margin-bottom: 10px;
+}
+
+.handymanWholeInfo{
+    width:97.3%;
+    padding: 10px;
+    border:1px solid #ADADAD;
+    display:inline-block;
+}
+
+.handymanWholeInfo div{
+    margin-bottom: 10px;
+}
+
+.transactionWholeInfoOne{
+    width:45%;
+    padding: 10px;
+    display:inline-block;
+}
+.transactionWholeInfoOne div{
+    margin-bottom: 10px;
+}
+
+.transactionWholeInfoTwo{
+    margin-left: 23px;
+    width:45%;
+    padding: 10px;
+    display:inline-block;
+}
+.transactionWholeInfoTwo div{
+    margin-bottom: 10px;
+}
+
+.reportWholeInfo{
+    width:45%;
+    padding: 10px;
+    border:1px solid #ADADAD;
+    display:inline-block;
+}
+
+.reportWholeInfo div{
+    margin-bottom: 10px;
+}
+
+.profilePic{
+    width: 150px;
+    height: 150px;
+}
+
+.profilePicContent{
+    padding-left: 33%;
+    padding-left: 33%;
+}
+
+.transactionInfo{
+    display: flex;
+}
+
+.transactionWholeInfo{
+    margin-top: 5px;
+    border:1px solid #ADADAD;
+    width: 100%;
+}
+
+.customerDetailsTitle{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.transactionID{
+    margin-bottom: 10px;
+}
+.transactionID div{
+    margin-bottom: 10px;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+
+    border-top: none;
+}
+
+.active {
+    display: block;
+}

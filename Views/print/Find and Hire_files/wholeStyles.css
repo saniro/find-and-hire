@@ -1,0 +1,24 @@
+html, body{
+	background-color: rgb(240,240,240);
+	margin: 0px;
+}
+.heading{
+	width: 100%;
+	margin: 0px;
+	top: 0px;
+	position: fixed;
+	z-index: 1;
+}
+
+.webTitlePage{
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	height: 8%; 
+}
+
+.wrapper{
+	padding-left: 260px; 
+	padding-top: 70px;
+    padding-right: 20px;
+}

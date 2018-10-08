@@ -1,0 +1,154 @@
+.viewModalYesNo {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModalYesNo-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    padding-bottom: 20px;
+}
+
+/* The Close Button */
+.viewCloseYesNo {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewCloseYesNo:hover,
+.viewCloseYesNo:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewModalActivate {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModalActivate-content {
+    font-family: Century Gothic;
+    font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    padding-bottom: 20px;
+}
+
+/* The Close Button */
+.viewCloseActivate {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewCloseActivate:hover,
+.viewCloseActivate:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.details div{
+	margin-bottom: 10px;
+}
+.titleDetails{
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+.infoDetails{
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+.noButton{
+	margin-left: 40px;
+}
+.profilePic{
+	width: 150px;
+	height: 150px;
+}
+.profilePicDivision{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.profilePicContent{
+	padding-left: 33%;
+	padding-left: 33%;
+}
+.customerDetailsAll{
+    width:45%;
+    padding: 10px;
+    border:1px solid #ADADAD;
+    display:inline-block;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+
+    border-top: none;
+}
+
+.active {
+    display: block;
+}

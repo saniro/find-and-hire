@@ -1,0 +1,417 @@
+
+<!-- saved from url=(0083)http://localhost/website/CAPSTONE%20-%20Admin/index?route=generateReports&year=2017 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="shortcut icon" href="http://localhost/website/CAPSTONE%20-%20Admin/Resources/sample-logo.png">
+		<title>Find and Hire</title>
+		<script type="text/javascript" src="./Find and Hire_files/Chart.min.js.download"></script><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+		<link rel="stylesheet" type="text/css" href="./Find and Hire_files/bootstrap.min.css">
+
+		<link rel="stylesheet" type="text/css" href="./Find and Hire_files/wholeStyles.css">
+		<link rel="stylesheet" type="text/css" href="./Find and Hire_files/admin-generateReportsStyles.css">
+		<link rel="stylesheet" type="text/css" href="./Find and Hire_files/iconActionStyles.css">
+	</head>
+	<body>
+		<div class="webTitlePage">
+		
+	
+		<link rel="shortcut icon" href="http://localhost/website/CAPSTONE%20-%20Admin/Resources/sample-logo.png">
+		<title>Find and Hire</title>
+		<link rel="stylesheet" type="text/css" href="./Find and Hire_files/admin-titleStyles.css">
+	
+	
+				<div class="webTitle">
+			<ul class="webTitleUL">
+			  <li class="webTitleList"><div class="webTitleText">Find and Hire</div></li>
+			  <li class="webTitleListLeft">
+			  	<div class="webProfile">
+			  		<ul class="webTitleUL">
+			  			<li class="webTitleList">
+				  			<div class="webProfilePicture">
+				  				<img class="dropbtnUser" src="./Find and Hire_files/1535424369.png">
+				  			</div>
+				  		</li>
+				  		<li class="webTitleList">
+				  			<div class="webProfileName">Mark</div>
+				  		</li>
+				  		<li class="webTitleList">
+				  			<div class="webProfileOptions">
+								<div class="dropDownBtn">
+									<button class="dropBtnOptions">
+										<i class="dropDown"></i>
+									</button>
+									<div class="dropDownBtnContent">
+										<a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=picture">UPDATE PROFILE PIC</a>
+										<a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=profile">UPDATE PROFILE</a>
+										<a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=changePassword">CHANGE PASSWORD</a>
+										<a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=changeAddress">CHANGE ADDRESS</a>
+										<form method="post">
+											<button class="logoutBtn" name="logout">
+												LOGOUT
+											</button>
+										</form>
+									</div>
+								</div> 
+				  				
+				  			</div>
+				  		</li>
+			  		</ul>
+			  	</div>
+			 	</li>
+			</ul>	
+		</div>
+			
+		</div>
+		<div>
+			<div class="sideNavigation">
+				
+
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./Find and Hire_files/sideNav.css">
+    <link rel="stylesheet" href="./Find and Hire_files/admin-sidebarStyles.css">
+  
+
+
+<div class="sidenav">
+  <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=dashboard">DASHBOARD</a>
+  <button class="sub-menu">ACCOUNTS 
+    <i class="iconDown"></i>
+  </button>
+  <div class="submenu-container">
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=customerAccounts">CUSTOMER</a>
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=handymanAccounts">HANDYMAN</a>
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=request">REQUEST PROFILE PICTURE</a>
+  </div>
+  <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=booking">BOOKING</a>
+  <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=transactions">TRANSACTION</a>
+  <button class="sub-menu">MAINTENANCE 
+    <i class="iconDown"></i>
+  </button>
+  <div class="submenu-container">
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=notifications">NOTIFICATIONS</a>
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=questions">QUESTIONS</a>
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=requirementTypes">REQUIREMENTS</a>
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=service">SERVICES</a>
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=violations">VIOLATIONS</a>
+  </div>
+  <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=complaints">
+      COMPLAINTS
+  </a>
+  <button class="sub-menu">TOP UP 
+    <i class="iconDown"></i>
+  </button>
+  <div class="submenu-container">
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=pending">PENDING</a>
+    <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=history">HISTORY</a>
+  </div>
+  <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=penalty">PENALTIES</a>
+  <a href="http://localhost/website/CAPSTONE%20-%20Admin/index?route=generateReports">REPORTS</a>
+</div>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("sub-menu");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+ 			</div>
+			<div class="wrapper">
+									<div class="content">
+					<div class="header">
+						<form method="post">
+							<div class="printReport">
+								<button class="view">PRINT</button>
+								<span class="select">YEAR : </span>
+								<select name="changeYear" id="changeYear" class="optionSearch" onchange="selectYear()">
+									<option value="none" selected="">-SELECT YEAR-</option>
+									<option value="2017" selected="">2017</option><option value="2018">2018</option>								</select>
+								<span class="select">MONTH : </span>
+								<select name="changeMonth" id="changeMonth" class="optionSearch" onchange="selectMonth()">
+									<option value="none">-SELECT MONTH-</option>
+									<option value="October">October</option><option value="November">November</option><option value="December">December</option>								</select>
+								<span class="select">DAY : </span>
+								<select name="changeDay" id="changeDay" class="optionSearch" disabled="">
+									<option value="none">-SELECT DAY-</option>
+									
+Notice:  Undefined variable: ctrDay in C:\xampp\htdocs\Website\CAPSTONE - Admin\Views\admin-generateReports.php on line 467
+								</select>
+							</div>
+						</form>
+					</div>
+					<div class="dateDivision datePosition">
+						<span>DATE :</span>
+						2017					</div>
+					<div class="top-div top-services">
+						<h1>TOP 5 SERVICES
+						THIS YEAR</h1>
+						<table>
+							<colgroup><col width="50">
+							<col width="240">
+							</colgroup><tbody><tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Count</th>
+							</tr>
+							<tr><td>3</td><td>Laundry</td><td>4</td></tr><tr><td>1</td><td>Cleaning</td><td>2</td></tr><tr><td>10</td><td>3243 asdas</td><td>0</td></tr><tr><td>4</td><td>Painting</td><td>0</td></tr><tr><td>5</td><td>Pest Control</td><td>0</td></tr>						</tbody></table>
+					</div>
+
+					<div class="top-div top-customers">
+						<h1>TOP 5 CUSTOMERS
+						THIS YEAR</h1>
+						<table>
+							<colgroup><col width="50">
+							<col width="240">
+							</colgroup><tbody><tr>
+								<th>ID</th>
+								<th>Service Name</th>
+								<th>Count</th>
+							</tr>
+							<tr><td>2</td><td>Sanchez, Jairo Malamanig</td><td>5</td></tr>						</tbody></table>
+					</div>
+
+					<div class="top-div top-accused">
+						<h1>TOP 5 ACCUSED
+						THIS YEAR</h1>
+						<table>
+							<colgroup><col width="50">
+							<col width="240">
+							</colgroup><tbody><tr>
+								<th>ID</th>
+								<th>Accused</th>
+								<th>Count</th>
+							</tr>
+							<tr><td>2</td><td>Sanchez, Jairo Malamanig</td><td>2</td></tr><tr><td>1</td><td>Concepcion, Patrick Joseph  Pasion</td><td>1</td></tr>						</tbody></table>
+					</div>
+
+					<div class="bookingThisDay div">
+						BOOKINGS THIS YEAR<br>
+						________________________<br>
+						<h1>6</h1>
+					</div>
+					<div class="aveBooking div">
+						AVE BOOKING / DAY<br>
+						________________________<br>
+						<h1>0.0164</h1>
+					</div>
+					<div class="transactionThisDay div">
+						TRANSACTIONS THIS YEAR						<br>
+						________________________<br>
+						<h1>5</h1>
+					</div>
+					<div class="aveTransaction div">
+						AVE TRANSACTION / DAY<br>
+						________________________<br>
+						<h1>0.0137</h1>
+					</div>
+					<div class="serviceSuggestion div">
+						You should hire more<br>
+						handyman for<br>
+						<h1>Laundry</h1>
+					</div>
+					<div class="reportsThisDay div">
+						COMPLAINTS THIS YEAR						<br>
+						________________________<br>
+						<h1>3</h1>
+					</div>
+					<div class="aveReports div">
+						AVE COMPLAINTS / DAY<br>
+						________________________<br>
+						<h1>0.0082</h1>
+					</div>
+				</div>
+				<div class="services-availed"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+					<canvas id="services-availed" width="645" height="322" class="chartjs-render-monitor" style="display: block; width: 645px; height: 322px;"></canvas>
+				</div>
+				<script type="text/javascript">
+					var myChart = document.getElementById("services-availed").getContext('2d');
+					var massPopChart = new Chart(myChart, {
+						type: 'pie',
+						data: {
+							datasets: [{
+								label: 'Service',
+								data: [
+									2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 								],
+								backgroundColor: [
+								'rgba(210,57,127, .4)','rgba(24,3,198, .4)','rgba(58,161,251, .4)','rgba(243,250,145, .4)','rgba(255,38,239, .4)','rgba(206,179,99, .4)','rgba(245,181,163, .4)','rgba(73,254,27, .4)','rgba(236,184,200, .4)','rgba(230,243,74, .4)',								],
+								borderWidth: 1,
+								borderColor:'white',
+								hoverBorderWidth: 2,
+								hoverBorderColor: '#777'
+								}],
+							labels: [
+								'Cleaning', 'Plumbing', 'Laundry', 'Painting', 'Pest Control', 'Baby Sitter', 'yow', 'asdas', 'asdjkasd^%&%', '3243 asdas', 							]
+							},
+							options: {
+						        scales: {
+						            yAxes: [{
+						                ticks: {
+						                	display:false,
+						                    beginAtZero:true
+						                },
+						                gridLines: {
+						                	display:false,
+						                	drawTicks:false,
+						                	offsetGridLines:0
+						                }
+						            }]
+						        },
+						        title:{
+						        	display:true,
+						        	text:'Services Availed',
+						        	fontSize:25
+						        },
+						        legend:{
+						        	display:true,
+						        	position:'right',
+						        	labels:{
+						        		fontColor: '#000'
+						        	}
+						        },
+						        layout:{
+						        	padding:{
+						        		left:0,
+						        		right:0,
+						        		bottom:0,
+						        		top:0
+						        	}
+						        },
+						        tooltips:{
+						        	enabled:true
+						        }
+						    }
+						});
+				</script>
+
+				<div class="report-transaction"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+					<canvas id="report-transaction" width="645" height="322" class="chartjs-render-monitor" style="display: block; width: 645px; height: 322px;"></canvas>
+				</div>
+				<script>
+					// var barChart = document.get
+					// var myBarChart = new Chart(ctx, {
+					//     type: 'horizontalBar',
+					//     data: data,
+					//     options: options
+					// });
+
+
+					var reportChart = document.getElementById("report-transaction").getContext('2d');
+					var massPopChart = new Chart(reportChart, {
+						type: 'horizontalBar',
+						data: {
+							datasets: [
+							{
+								label: 'Booking',
+								fill: false,
+								data: [
+									6, 								],
+								borderWidth: 3,
+								borderColor:'rgba(135, 197, 64, .9)',
+								backgroundColor:'rgba(135, 197, 64, .9)'
+							},{
+								label: 'Transaction',
+								fill: false,
+								data: [
+									5, 								],
+								borderWidth: 3,
+								borderColor:'rgba(52, 152, 219, .9)',
+								backgroundColor:'rgba(52, 152, 219, .9)'
+							},{
+								label: 'Reports',
+								fill: false,
+								data: [
+									3, 								],
+								borderWidth: 3,
+								borderColor:'rgba(231, 76, 60, .9)',
+								backgroundColor:'rgba(231, 76, 60, .9)'
+							}]
+						},
+						options: {
+					        scales: {
+					            xAxes: [{
+					                ticks: {
+					                    beginAtZero:true
+					                }
+					            }]
+					        },
+					        title:{
+					        	display:true,
+					        	text:'Bookings : Transactions : Reports',
+					        	fontSize:25
+					        },
+					        legend:{
+					        	display:true,
+					        	position:'right',
+					        	labels:{
+					        		fontColor: '#000'
+					        	}
+					        },
+					        layout:{
+					        	padding:{
+					        		left:0,
+					        		right:0,
+					        		bottom:0,
+					        		top:0
+					        	}
+					        },
+					        tooltips:{
+					        	enabled:true,
+					        	mode:'index',
+					        	intersect:false
+					        }
+					    }
+					});
+				</script>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function selectYear(){
+				var year = document.getElementById('changeYear').value;
+				if(year == 'none'){
+					window.location.href = 'index?route=generateReports';
+				}
+				else{
+					window.location.href = 'index?route=generateReports&year='+year;
+				}
+
+			}
+
+			function selectMonth(){
+				var year = document.getElementById('changeYear').value;
+				var month = document.getElementById('changeMonth').value;
+				if(month == 'none'){
+					window.location.href = 'index?route=generateReports&year='+year;
+				}
+				else{
+					window.location.href = 'index?route=generateReports&year='+year+'&month='+month;
+				}
+			}
+
+			function selectDay(){
+				var year = document.getElementById('changeYear').value;
+				var month = document.getElementById('changeMonth').value;
+				var day = document.getElementById('changeDay').value;
+				if(day == 'none'){
+					window.location.href = 'index?route=generateReports&year='+year+'&month='+month;
+				}
+				else{
+					window.location.href = 'index?route=generateReports&year='+year+'&month='+month+'&day='+day;
+				}
+			}
+		</script>
+	
+
+
+</body></html>

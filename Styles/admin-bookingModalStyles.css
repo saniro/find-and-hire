@@ -1,0 +1,133 @@
+.viewModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 30px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModal-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    margin-bottom: 60px;
+}
+
+/* The Close Button */
+.viewClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewClose:hover,
+.viewClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewFeedbackModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 30px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewFeedbackModal-content {
+    font-family: Century Gothic;
+    font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    margin-bottom: 60px;
+}
+
+/* The Close Button */
+.viewFeedbackClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewFeedbackClose:hover,
+.viewFeedbackClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.titleDetails{
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.customerWholeInfo{
+    width:97.3%;
+    padding: 10px;
+    border:1px solid #ADADAD;
+    display:inline-block;
+}
+.customerWholeInfo div{
+    margin-bottom: 10px;
+}
+
+.profilePic{
+    width: 150px;
+    height: 150px;
+}
+
+.profilePicContent{
+    padding-left: 41%;
+}
+
+.bookingInfo{
+    margin-top: 10px;
+}
+
+.bookingInfo div{
+    margin-top: 10px;
+}
+
+.transactionID{
+    margin-bottom: 10px;
+}
+
+.feedBackInfo{
+    width: 97.2%;
+    padding: 10px;
+    border:1px solid #ADADAD;
+    display:inline-block;
+    margin-top: 10px;
+}
+
+.profilePicFeedback{
+    padding-left: 40%;
+}
+
+table{
+    border: 0px;
+}

@@ -1,0 +1,116 @@
+.div h1{
+	font-size: 30px;
+}
+
+.div{
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 17px;
+	padding-bottom: 10px;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .5);
+	text-align: center;
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 205px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+
+
+.totalCustomer{
+	top: 70px;
+	left: 260px;	
+}
+
+.totalHandyman{
+	top: 70px;
+	left: 480px;
+}
+
+.totalBooking{
+	top: 70px;
+	left: 700px;
+}
+
+.totalTransaction{
+	top: 70px;
+	left: 920px;
+}
+
+.totalReports{
+	top: 70px;
+	left: 1140;
+}
+
+.bookingThisDay{
+	top: 200px;
+	left: 920px;
+}
+
+.aveBooking{
+	top: 200px;
+	left: 1140px;
+}
+
+.transactionThisDay{
+	top: 330px;
+	left: 920px;
+}
+
+.aveTransaction{
+	top: 330px;
+	left: 1140px;
+}
+
+.serviceSuggestion{
+	top: 460px;
+	left: 920px;
+}
+
+.reportsThisDay{
+	top: 590px;
+	left: 920px;
+}
+
+.aveReports{
+	top: 590px;
+	left: 1140px;
+}
+
+.onGoing{
+	top: 160px;
+	left: 1100px;
+	padding-top: 17px;
+	padding-left: 17px;
+	padding-bottom: 10px;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .5);
+	text-align: left;
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 220px;
+}
+
+.services-availed {
+	position: absolute;
+	top: 200px;
+	left: 260px;
+	width:645px;
+	background-color: rgba(255, 255, 255, .5);
+	padding-top: 24px;
+	padding-bottom: 29px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.report-transaction {
+	position: absolute;
+	top: 590px;
+	left: 260px;
+	width:645px;
+	background-color: rgba(255, 255, 255, .5);
+	padding-top: 24px;
+	padding-bottom: 29px;
+	margin-bottom: 20px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}

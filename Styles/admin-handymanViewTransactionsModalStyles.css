@@ -1,0 +1,64 @@
+.viewModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 40px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModal-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    margin-bottom: 60px;
+}
+
+/* The Close Button */
+.viewClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewClose:hover,
+.viewClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.details div{
+	margin-bottom: 10px;
+}
+
+.titleDetails{
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+
+.noButton{
+	margin-left: 40px;
+}
+.profilePic{
+	width: 150px;
+	height: 150px;
+}
+.profilePicDivision{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.profilePicContent{
+	padding-left: 40%;
+}
