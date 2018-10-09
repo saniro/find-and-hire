@@ -17,11 +17,11 @@
 		<script type="text/javascript">
 			function genPDF(){
 				html2canvas(document.getElementById("printReport")).then(function(canvas) {
-				    //document.body.appendChild(canvas);
-				    // var width: 20
-				    // var height: 20
-				    var doc = new jsPDF();
-					doc.addImage(canvas, 'JPEG', 0, 0, 210, 260);
+				    var doc = new jsPDF("p", "mm", "legal");
+				    var width = doc.internal.pageSize.width;    
+					var height = doc.internal.pageSize.height;
+
+					doc.addImage(canvas, 'JPEG', 0, 0, width, height);
 					doc.output('save','Find & Hire Reports.pdf');
 				});
 			}
@@ -301,16 +301,16 @@
 						}
 						//===== Service Chart Start =====
 						if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
-							$sqlServiceChart = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) AS countAvailed FROM services AS SS";
+							$sqlServiceChart = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) AS countAvailed FROM services AS SS WHERE (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) <> 0";
 						}
 						else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
-							$sqlServiceChart = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) AS countAvailed FROM services AS SS";
+							$sqlServiceChart = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) AS countAvailed FROM services AS SS WHERE (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) <> 0";
 						}
 						else if(isset($_GET['year']) && ($yearTrue)){
-							$sqlServiceChart = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) AS countAvailed FROM services AS SS";
+							$sqlServiceChart = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) AS countAvailed FROM services AS SS WHERE (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) <> 0";
 						}
 						else{
-							$sqlServiceChart = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID) AS countAvailed FROM services AS SS";
+							$sqlServiceChart = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID) AS countAvailed FROM services AS SS WHERE (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID) <> 0";
 						}
 						$stmt = $con->prepare($sqlServiceChart);
 						if(isset($_GET['year']) && ($yearTrue)){
@@ -334,18 +334,53 @@
 				    	}
 				    	//===== Service Chart End =====
 				    	//=====================================================================
-				    	//===== Top 5 Service Start =====
-				    	if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
-							$sqlTopServices = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) AS countAvailed FROM services AS SS ORDER BY (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) DESC LIMIT 5";
+				    	//===== Service Transaction Start =====
+						if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
+							$sqlServiceTransaction = "SELECT serviceID, name, (SELECT count((SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID)) AS transactionID FROM booking AS BG WHERE (SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID) IS NOT NULL AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) AS countAvailed FROM services AS SS WHERE (SELECT count((SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID)) AS transactionID FROM booking AS BG WHERE (SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID) IS NOT NULL AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) <> 0";
 						}
 						else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
-							$sqlTopServices = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) AS countAvailed FROM services AS SS ORDER BY (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) DESC LIMIT 5";
+							$sqlServiceTransaction = "SELECT serviceID, name, (SELECT count((SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID)) AS transactionID FROM booking AS BG WHERE (SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID) IS NOT NULL AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) AS countAvailed FROM services AS SS WHERE (SELECT count((SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID)) AS transactionID FROM booking AS BG WHERE (SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID) IS NOT NULL AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) <> 0";
 						}
 						else if(isset($_GET['year']) && ($yearTrue)){
-							$sqlTopServices = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) AS countAvailed FROM services AS SS ORDER BY (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) DESC LIMIT 5";
+							$sqlServiceTransaction = "SELECT serviceID, name, (SELECT count((SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID)) AS transactionID FROM booking AS BG WHERE (SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID) IS NOT NULL AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) AS countAvailed FROM services AS SS WHERE (SELECT count((SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID)) AS transactionID FROM booking AS BG WHERE (SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID) IS NOT NULL AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year)";
 						}
 						else{
-							$sqlTopServices = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID) AS countAvailed FROM services AS SS ORDER BY (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID) DESC LIMIT 5";
+							$sqlServiceTransaction = "SELECT serviceID, name, (SELECT count((SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID)) AS transactionID FROM booking AS BG WHERE (SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID) IS NOT NULL AND BG.serviceID = SS.serviceID) AS countAvailed FROM services AS SS WHERE (SELECT count((SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID)) AS transactionID FROM booking AS BG WHERE (SELECT transactionID FROM transaction AS TN WHERE TN.bookingID = BG.bookingID) IS NOT NULL AND BG.serviceID = SS.serviceID)";
+						}
+						$stmt = $con->prepare($sqlServiceTransaction);
+						if(isset($_GET['year']) && ($yearTrue)){
+							$stmt->bindParam(':year', $_GET['year'], PDO::PARAM_INT);
+						}
+						if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
+							$stmt->bindParam(':month', $_GET['month'], PDO::PARAM_STR);
+						}
+						if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
+							$stmt->bindParam(':day', $_GET['day'], PDO::PARAM_STR);
+						}
+						$stmt->execute();
+						$results = $stmt->fetchAll();
+						$rowCountServiceTransaction = $stmt->rowCount();
+						$ctr = 0;
+						foreach($results as $rowServiceTransaction){
+							$serviceTransactionServiceID[$ctr] = $rowServiceTransaction["serviceID"];
+							$serviceTransactionServiceName[$ctr] = $rowServiceTransaction["name"];
+							$serviceTransactionServiceCountAvailed[$ctr] = $rowServiceTransaction["countAvailed"];
+							$ctr++;
+				    	}
+				    	//===== Service Chart End =====
+				    	//=====================================================================
+				    	//===== Top 5 Service Start =====
+				    	if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
+							$sqlTopServices = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) AS countAvailed FROM services AS SS WHERE (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) <> 0 ORDER BY (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month AND DATE_FORMAT(date, '%d') = :day) DESC LIMIT 5";
+						}
+						else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
+							$sqlTopServices = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) AS countAvailed FROM services AS SS WHERE (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) <> 0 ORDER BY (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year AND DATE_FORMAT(date, '%M') = :month) DESC LIMIT 5";
+						}
+						else if(isset($_GET['year']) && ($yearTrue)){
+							$sqlTopServices = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) AS countAvailed FROM services AS SS WHERE (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) <> 0 ORDER BY (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID AND BG.serviceID = SS.serviceID AND DATE_FORMAT(date, '%Y') = :year) DESC LIMIT 5";
+						}
+						else{
+							$sqlTopServices = "SELECT serviceID, name, (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID) AS countAvailed FROM services AS SS WHERE (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID) <> 0 ORDER BY (SELECT count(bookingID) FROM booking AS BG WHERE BG.serviceID = SS.serviceID) DESC LIMIT 5";
 						}
 						$stmt = $con->prepare($sqlTopServices);
 						if(isset($_GET['year']) && ($yearTrue)){
@@ -525,12 +560,60 @@
 									echo 'As of <b>' . date('F j, Y') . '</b>, ';
 								}
 							?>
-						</div>
-						<div class = "services-availed">
-							<canvas id = "services-availed"></canvas>
-						</div>
-						<div class = "top-div top-services">
-							<h1>TOP 5 SERVICES
+							the total bookings are <b><?php echo $countBooking;?></b>. In those <b><?php echo $countBooking;?></b> bookings
+							<?php
+								for ($i=0; $i < $rowCountService; $i++) { 
+									echo ', <b>' . $serviceChartServiceName[$i] . '</b> is <b>' . $serviceChartServiceCountAvailed[$i] . '</b>';
+								}
+							?>. The average booking per 
+							<?php
+								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
+									echo "day";
+								}
+								else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
+									echo "month";
+								}
+								else if(isset($_GET['year']) && ($yearTrue)){
+									echo "year";
+								}
+								else{
+									echo "day";
+								}
+							?> is <b><?php echo $aveBooking;?></b>. In those <b><?php echo $countBooking;?></b> bookings, <b><?php echo $countTransaction;?></b> do have transactions or accepted. In those <b><?php echo $countTransaction;?></b> transactions<?php
+								for ($i=0; $i < $rowCountServiceTransaction; $i++) { 
+									echo ', <b>' . $serviceTransactionServiceName[$i] . '</b> is <b>' . $serviceTransactionServiceCountAvailed[$i] . '</b>';
+								}
+							?>. The average transaction per 
+							<?php
+								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
+									echo "day";
+								}
+								else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
+									echo "month";
+								}
+								else if(isset($_GET['year']) && ($yearTrue)){
+									echo "year";
+								}
+								else{
+									echo "day";
+								}
+							?> is <b><?php echo $aveTransaction;?></b>. In those <b><?php echo $countTransaction;?></b> transactions, <b><?php echo $countReports; ?></b> is the total of complaints. The average complaints per <?php
+								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
+									echo "day";
+								}
+								else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
+									echo "month";
+								}
+								else if(isset($_GET['year']) && ($yearTrue)){
+									echo "year";
+								}
+								else{
+									echo "day";
+								}
+							?> is <b><?php echo $aveReport;?></b>. The booking, transaction, and report are the following: BOOKING is <b><?php echo $countBooking;?></b>. TRANSACTION is <?php echo '<b>'.$countTransaction . "</b>"; ?>. REPORT is <?php echo '<b>'.$countReports . '</b>'; ?>.<br><br>
+							<b>You should hire more handyman for <?php echo $mostAvailed;?>.</b>
+							<br><br>
+							The <b>TOP <?php echo $countTopServices; ?> SERVICES
 							<?php
 								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
 									echo "THIS DAY";
@@ -541,31 +624,33 @@
 								else if(isset($_GET['year']) && ($yearTrue)){
 									echo "THIS YEAR";
 								}
-							?></h1>
+							?></b> are the following:
 							<table>
 								<col width="50">
-								<col width="240">
+								<col width="600">
 								<tr>
 									<th>ID</th>
 									<th>Name</th>
 									<th>Count</th>
 								</tr>
 								<?php
-									for ($i=0; $i < $countTopServices; $i++) { 
+									if($countTopServices > 0){
+										for ($i=0; $i < $countTopServices; $i++) { 
+											echo "<tr>";
+											echo "<td>" . $serviceTopServicesID[$i] . "</td>";
+											echo "<td>" . $serviceTopServicesName[$i] . "</td>";
+											echo "<td>" . $serviceTopServicesCountAvailed[$i] . "</td>";
+											echo "</tr>";
+										}
+									}
+									else{
 										echo "<tr>";
-										echo "<td>" . $serviceTopServicesID[$i] . "</td>";
-										echo "<td>" . $serviceTopServicesName[$i] . "</td>";
-										echo "<td>" . $serviceTopServicesCountAvailed[$i] . "</td>";
+										echo "<td colspan = '3'> No results. </td>";
 										echo "</tr>";
 									}
 								?>
-							</table>
-						</div>
-						<div class = "report-transaction">
-							<canvas id="report-transaction"></canvas>
-						</div>
-						<div class = "top-div top-customers">
-							<h1>TOP 5 CUSTOMERS
+							</table><br>
+							The <b>TOP <?php echo $countTopCustomers; ?> CUSTOMERS
 							<?php
 								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
 									echo "THIS DAY";
@@ -576,104 +661,33 @@
 								else if(isset($_GET['year']) && ($yearTrue)){
 									echo "THIS YEAR";
 								}
-							?></h1>
+							?></b> are the following:
 							<table>
 								<col width="50">
-								<col width="240">
+								<col width="600">
 								<tr>
 									<th>ID</th>
 									<th>Service Name</th>
 									<th>Count</th>
 								</tr>
 								<?php
-									for ($i=0; $i < $countTopCustomers; $i++) { 
+									if($countTopCustomers > 0){
+										for ($i=0; $i < $countTopCustomers; $i++) { 
+											echo "<tr>";
+											echo "<td>" . $serviceTopCustomersID[$i] . "</td>";
+											echo "<td>" . $serviceTopCustomersName[$i] . "</td>";
+											echo "<td>" . $serviceTopCustomersCountAvailed[$i] . "</td>";
+											echo "</tr>";
+										}
+									}
+									else{
 										echo "<tr>";
-										echo "<td>" . $serviceTopCustomersID[$i] . "</td>";
-										echo "<td>" . $serviceTopCustomersName[$i] . "</td>";
-										echo "<td>" . $serviceTopCustomersCountAvailed[$i] . "</td>";
+										echo "<td colspan = '3'> No results. </td>";
 										echo "</tr>";
 									}
 								?>
-							</table>
-						</div>
-						<div class = "bookingThisDay div">
-							<?php
-								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
-									echo "BOOKINGS THIS DAY";
-								}
-								else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
-									echo "BOOKINGS THIS MONTH";
-								}
-								else if(isset($_GET['year']) && ($yearTrue)){
-									echo "BOOKINGS THIS YEAR";
-								}
-								else{
-									echo "ALL BOOKINGS";
-								}
-							?><br>
-							________________________<br>
-							<h1><?php echo $countBooking;?></h1>
-						</div>
-						<div class = "aveBooking div">
-							AVE BOOKING / DAY<br>
-							________________________<br>
-							<h1><?php echo $aveBooking;?></h1>
-						</div>
-						<div class = "serviceSuggestion div">
-							You should hire more<br>
-							handyman for<br>
-							<h1><?php echo $mostAvailed;?></h1>
-						</div>
-						<div class = "transactionThisDay div">
-							<?php
-								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
-									echo "TRANSACTIONS THIS DAY";
-								}
-								else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
-									echo "TRANSACTIONS THIS MONTH";
-								}
-								else if(isset($_GET['year']) && ($yearTrue)){
-									echo "TRANSACTIONS THIS YEAR";
-								}
-								else{
-									echo "ALL TRANSACTIONS";
-								}
-							?>
-							<br>
-							________________________<br>
-							<h1><?php echo $countTransaction;?></h1>
-						</div>
-						<div class = "aveTransaction div">
-							AVE TRANSACTION / DAY<br>
-							________________________<br>
-							<h1><?php echo $aveTransaction;?></h1>
-						</div>
-						<div class = "reportsThisDay div">
-							<?php
-								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
-									echo "COMPLAINTS THIS DAY";
-								}
-								else if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue)){
-									echo "COMPLAINTS THIS MONTH";
-								}
-								else if(isset($_GET['year']) && ($yearTrue)){
-									echo "COMPLAINTS THIS YEAR";
-								}
-								else{
-									echo " ALL COMPLAINTS";
-								}
-							?>
-							<br>
-							________________________<br>
-							<h1><?php echo $countReports;?></h1>
-						</div>
-						<div class = "aveReports div">
-							AVE COMPLAINTS / DAY<br>
-							________________________<br>
-							<h1><?php echo $aveReport;?></h1>
-						</div>
-						<div class = "top-div top-accused">
-							<h1>TOP 5 ACCUSED
+							</table><br>
+							The <b>TOP <?php echo $countTopAccused; ?> ACCUSED
 							<?php
 								if(isset($_GET['year']) && ($yearTrue) && isset($_GET['month']) && ($monthTrue) && isset($_GET['day']) && ($dayTrue)){
 									echo "THIS DAY";
@@ -684,21 +698,28 @@
 								else if(isset($_GET['year']) && ($yearTrue)){
 									echo "THIS YEAR";
 								}
-							?></h1>
+							?></b> are the following:
 							<table>
 								<col width="50">
-								<col width="240">
+								<col width="600">
 								<tr>
 									<th>ID</th>
 									<th>Accused</th>
 									<th>Count</th>
 								</tr>
 								<?php
-									for ($i=0; $i < $countTopAccused; $i++) { 
+									if($countTopAccused > 0){
+										for ($i=0; $i < $countTopAccused; $i++) { 
+											echo "<tr>";
+											echo "<td>" . $topAccusedID[$i] . "</td>";
+											echo "<td>" . $topAccusedName[$i] . "</td>";
+											echo "<td>" . $topAccusedCountReports[$i] . "</td>";
+											echo "</tr>";
+										}
+									}
+									else{
 										echo "<tr>";
-										echo "<td>" . $topAccusedID[$i] . "</td>";
-										echo "<td>" . $topAccusedName[$i] . "</td>";
-										echo "<td>" . $topAccusedCountReports[$i] . "</td>";
+										echo "<td colspan = '3'> No results. </td>";
 										echo "</tr>";
 									}
 								?>
@@ -712,10 +733,10 @@
 			function selectYear(){
 				var year = document.getElementById('changeYear').value;
 				if(year == 'none'){
-					window.location.href = 'index?route=generateReports';
+					window.location.href = 'index?route=writtenReports';
 				}
 				else{
-					window.location.href = 'index?route=generateReports&year='+year;
+					window.location.href = 'index?route=writtenReports&year='+year;
 				}
 
 			}
@@ -724,10 +745,10 @@
 				var year = document.getElementById('changeYear').value;
 				var month = document.getElementById('changeMonth').value;
 				if(month == 'none'){
-					window.location.href = 'index?route=generateReports&year='+year;
+					window.location.href = 'index?route=writtenReports&year='+year;
 				}
 				else{
-					window.location.href = 'index?route=generateReports&year='+year+'&month='+month;
+					window.location.href = 'index?route=writtenReports&year='+year+'&month='+month;
 				}
 			}
 
@@ -736,149 +757,12 @@
 				var month = document.getElementById('changeMonth').value;
 				var day = document.getElementById('changeDay').value;
 				if(day == 'none'){
-					window.location.href = 'index?route=generateReports&year='+year+'&month='+month;
+					window.location.href = 'index?route=writtenReports&year='+year+'&month='+month;
 				}
 				else{
-					window.location.href = 'index?route=generateReports&year='+year+'&month='+month+'&day='+day;
+					window.location.href = 'index?route=writtenReports&year='+year+'&month='+month+'&day='+day;
 				}
 			}
-			//=================================================================================
-			var serviceAvailedChart = document.getElementById("services-availed").getContext('2d');
-			var massServiceAvailedChart = new Chart(serviceAvailedChart, {
-				type: 'pie',
-				data: {
-					datasets: [{
-						label: 'Service',
-						data: [
-							<?php for ($i=0; $i < $rowCountService; $i++) { 
-								echo $serviceChartServiceCountAvailed[$i].", ";
-							}?>
-						],
-						backgroundColor: [
-						<?php for ($i=0; $i < $rowCountService; $i++) { 
-							echo randomColor();
-						}?>
-						],
-						borderWidth: 1,
-						borderColor:'white',
-						hoverBorderWidth: 2,
-						hoverBorderColor: '#777'
-					}],
-					labels: [
-						<?php for ($i=0; $i < $rowCountService; $i++) { 
-							echo "'" . $serviceChartServiceName[$i] . "', ";
-						}?>
-					]
-				},
-				options: {
-			        scales: {
-			            yAxes: [{
-			                ticks: {
-			                	display:false,
-			                    beginAtZero:true
-			                },
-			                gridLines: {
-			                	display:false,
-			                	drawTicks:false,
-			                	offsetGridLines:0
-			                }
-			            }]
-			        },
-			        title:{
-			        	display:true,
-			        	text:'Services Availed',
-			        	fontSize:25
-			        },
-			        legend:{
-			        	display:true,
-			        	position:'right',
-			        	labels:{
-			        		fontColor: '#000'
-			        	}
-			        },
-			        layout:{
-			        	padding:{
-			        		left:0,
-			        		right:0,
-			        		bottom:0,
-			        		top:0
-			        	}
-			        },
-			        tooltips:{
-			        	enabled:true
-			        }
-			    }
-			});
-			//=============================================================================
-			var bookingTransactionReportChart = document.getElementById("report-transaction").getContext('2d');
-			var massBookingTransactionReport = new Chart(bookingTransactionReportChart, {
-				type: 'horizontalBar',
-				data: {
-					datasets: [
-					{
-						label: 'Booking',
-						fill: false,
-						data: [
-							<?php echo $countBooking . ", "; ?>
-						],
-						borderWidth: 3,
-						borderColor:'rgba(135, 197, 64, .9)',
-						backgroundColor:'rgba(135, 197, 64, .9)'
-					},{
-						label: 'Transaction',
-						fill: false,
-						data: [
-							<?php echo $countTransaction . ", "; ?>
-						],
-						borderWidth: 3,
-						borderColor:'rgba(52, 152, 219, .9)',
-						backgroundColor:'rgba(52, 152, 219, .9)'
-					},{
-						label: 'Reports',
-						fill: false,
-						data: [
-							<?php echo $countReports . ", "; ?>
-						],
-						borderWidth: 3,
-						borderColor:'rgba(231, 76, 60, .9)',
-						backgroundColor:'rgba(231, 76, 60, .9)'
-					}]
-				},
-				options: {
-			        scales: {
-			            xAxes: [{
-			                ticks: {
-			                    beginAtZero:true
-			                }
-			            }]
-			        },
-			        title:{
-			        	display:true,
-			        	text:'Bookings : Transactions : Reports',
-			        	fontSize:25
-			        },
-			        legend:{
-			        	display:true,
-			        	position:'right',
-			        	labels:{
-			        		fontColor: '#000'
-			        	}
-			        },
-			        layout:{
-			        	padding:{
-			        		left:0,
-			        		right:0,
-			        		bottom:0,
-			        		top:0
-			        	}
-			        },
-			        tooltips:{
-			        	enabled:true,
-			        	mode:'index',
-			        	intersect:false
-			        }
-			    }
-			});
 		</script>
 	</body>
 </html>

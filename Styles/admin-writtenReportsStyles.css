@@ -1,7 +1,6 @@
 table, tr, td{
 	border-collapse:collapse;
 	border-width: 0px;
-	border-c
 }
 .headerLogo{
 	margin-top: 15px;
@@ -12,7 +11,7 @@ table, tr, td{
 	background-color: rgba(255, 255, 255, .5);
 	font-family: century gothic;
 	border-collapse: collapse;
-	width: 1085px;
+	width: 820px;
 	box-shadow: 3px 3px 16px 5px #DCDCDC;
 }
 
@@ -20,9 +19,23 @@ table, tr, td{
 	font-size: 30px;
 }
 
-.top-div h1{
+.content_report h1{
 	font-size: 20px;
 	font-weight: bold;
+}
+
+.content_report table{
+	border-collapse: collapse;
+    width: 98%;
+}
+
+.content_report td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.content_report td{
+	background-color: #fff;
 }
 
 .div{
@@ -93,7 +106,7 @@ table, tr, td{
 	background-color: rgba(255, 255, 255, .5);
 	font-family: century gothic;
 	border-collapse: collapse;
-	width: 900px;
+	width: 1085px;
 	box-shadow: 3px 3px 16px 5px #DCDCDC;
 }
 
@@ -104,7 +117,7 @@ table, tr, td{
 	background-color: rgba(255, 255, 255, .5);
 	font-family: century gothic;
 	border-collapse: collapse;
-	width: 1085px;
+	width: 820px;
 	box-shadow: 3px 3px 16px 5px #DCDCDC;
 }
 
@@ -119,6 +132,7 @@ table, tr, td{
 .content_position{
 	margin-top: 15px;
 	padding-left: 20px;
+	padding-right: 10px;
 }
 
 .bookingThisDay{
