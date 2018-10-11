@@ -102,6 +102,9 @@
 		case 'writtenReports':
 			require("Views/admin-writtenReports.php");
 			break;
+		case 'accept_requirements':
+			require("Views/admin-acceptRequirements.php");
+			break;
 		case 'sidebar':
 			require("Views/admin-sidebar.php");
 			break;
