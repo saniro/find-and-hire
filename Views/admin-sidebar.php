@@ -15,7 +15,7 @@
   <div class="submenu-container">
     <a href="index?route=customerAccounts">CUSTOMER</a>
     <a href="index?route=handymanAccounts">HANDYMAN</a>
-    <a href="index?route=request">REQUEST PROFILE PICTURE</a>
+    <!-- <a href="index?route=request">REQUEST PROFILE PICTURE</a> -->
     <a href="index?route=accept_requirements">REQUIREMENTS</a>
   </div>
   <a href="index?route=booking">BOOKING</a>
