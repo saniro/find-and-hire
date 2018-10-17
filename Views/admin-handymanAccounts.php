@@ -338,6 +338,7 @@
 			    					$modalInfoGender = 'Female';
 			    				}
 			    				$modalInfoBirthdate = $rowInfoModal["birthDate"];
+			    				$modalInfoAge = date_diff(date_create($modalInfoBirthdate), date_create('now'))->y;
 			    				$modalInfoEmail = $rowInfoModal["email"];
 			    				$modalInfoContact = $rowInfoModal["contact"];
 							}
@@ -391,6 +392,10 @@
 								<tr class = "trInputs">
 								    <td class = "tdName">Birthdate</td>
 								    <td class = "tdInput"><?php echo $modalInfoBirthdate; ?></td>
+								</tr>
+								<tr class = "trInputs">
+								    <td class = "tdName">Age</td>
+								    <td class = "tdInput"><?php echo $modalInfoAge; ?></td>
 								</tr>
 								<tr class = "trInputs">
 								    <td class = "tdName">Email Address</td>
