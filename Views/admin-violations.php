@@ -182,7 +182,7 @@
     					<col width="170">
 						<tr class = "trInputs">
 						    <td class = "tdName">Violation Name</td>
-						    <td class = "tdInput"><input type="text" name="vioName" placeholder="Enter violation name here..." required maxlength="150" pattern = "[a-zA-Z0-9._%+-].{0,}" title="Must only contain letters, numbers, and ._%+-."></td>
+						    <td class = "tdInput"><input type="text" name="vioName" placeholder="Enter violation name here..." required maxlength="150" pattern = "[a-zA-Z0-9 ]+" title="Must only contain letters, and numbers."></td>
 						</tr>
 						<tr class = "trInputs">
 						    <td class = "tdName">Description</td>
@@ -290,7 +290,7 @@
     					<col width="170">
 						<tr class = "trInputs">
 						    <td class = "tdName">Violation Name</td>
-						    <td class = "tdInput"><input type="text" name="vioNameEdit" placeholder="Enter violation name here..." value = "<?php echo $reportNameEdit; ?>" maxlength = "150" pattern = "[a-zA-Z0-9._%+-].{0,}" required title="Must only contain letters, numbers, and ._%+-."></td>
+						    <td class = "tdInput"><input type="text" name="vioNameEdit" placeholder="Enter violation name here..." value = "<?php echo $reportNameEdit; ?>" maxlength = "150" pattern = "[a-zA-Z0-9 ]+" required title="Must only contain letters, and numbers."></td>
 						</tr>
 						<tr class = "trInputs">
 						    <td class = "tdName">Description</td>

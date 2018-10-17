@@ -167,7 +167,7 @@
 	    					<col width="170">
 							<tr class = "trInputs">
 							    <td class = "tdName">Service Name</td>
-							    <td class = "tdInput"><input type="text" name="serviceName" placeholder="Enter service name here..."  maxlength="60" pattern = "[a-zA-Z0-9._%+-].{0,}" title="Must only contain letters, numbers, and ._%+-." required></td>
+							    <td class = "tdInput"><input type="text" name="serviceName" placeholder="Enter service name here..."  maxlength="60" pattern = "[a-zA-Z0-9 ]+" title="Must only contain letters, and numbers" required></td>
 							</tr>
 						</table>
 						<div class = buttonSubmit>
@@ -366,7 +366,7 @@
 	    					<col width="130">
 							<tr class = "trInputs">
 							    <td class = "tdName">Service Name</td>
-							    <td class = "tdInput"><input type="text" name="serviceNameUpdate" placeholder="Enter service name here..." pattern = "[a-zA-Z0-9._%+-].{0,}" title="Must only contain letters, numbers, and ._%+-." value = "<?php echo $serviceNameEdit ?>" required></td>
+							    <td class = "tdInput"><input type="text" name="serviceNameUpdate" placeholder="Enter service name here..." pattern = "[a-zA-Z0-9 ]+" title="Must only contain letters, and numbers" value = "<?php echo $serviceNameEdit ?>" required></td>
 							</tr>
 						</table>
 						<div class = buttonSubmit>

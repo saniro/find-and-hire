@@ -161,7 +161,8 @@
 		// 	require("Views/print.php");
 		// 	break;
 		default:
-			echo '<br>'.$_GET['route'];
+			require("Views/admin-404.php");
+			//echo '<br>'.$_GET['route'];
 			break;
 	}
 ?>
