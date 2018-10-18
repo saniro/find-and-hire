@@ -62,6 +62,15 @@
   <div class="submenu-container">
     <a href="index?route=generateReports">GRAPHICAL REPORTS</a>
     <a href="index?route=writtenReports">WRITTEN REPORTS</a>
+    <?php
+      $sqlService = "SELECT serviceID, name FROM services LIMIT 1";
+      $stmt = $con->prepare($sqlService);
+      $stmt->execute();
+      $results = $stmt->fetch();
+      $ctrService = 0;
+      $reportServiceID = $results['serviceID'];
+    ?>
+    <a href="index?route=serviceReports&service=<?php echo $reportServiceID; ?>">SERVICE REPORTS</a>
   </div>
 </div>
 <script>

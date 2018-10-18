@@ -1,0 +1,196 @@
+table, tr, td{
+	border-collapse:collapse;
+	border-width: 0px;
+}
+.headerLogo{
+	margin-top: 15px;
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	background-color: rgba(255, 255, 255, .5);
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 820px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.div h1{
+	font-size: 30px;
+}
+
+.content_report h1{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.content_report table{
+	border-collapse: collapse;
+    width: 98%;
+}
+
+.content_report td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.content_report td{
+	background-color: #fff;
+}
+
+.div{
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 17px;
+	padding-bottom: 10px;
+	background-color: rgba(255, 255, 255, .5);
+	text-align: center;
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 205px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.top-div{
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 17px;
+	padding-bottom: 10px;
+	background-color: rgba(255, 255, 255, .5);
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 425px;
+	/*height: 245px;*/
+	height: 375px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.top-div table{
+	border-collapse: collapse;
+    width: 100%;
+}
+
+.top-div td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.top-div td{
+	background-color: #fff;
+}
+
+.top-services{
+	margin-top: -375px;
+	margin-left: 660px;	
+}
+
+.top-customers{
+	margin-top: -395px;
+	margin-left: 660px;	
+}
+
+.top-accused{
+	margin-top: -245px;
+	margin-left: 660px;	
+}
+
+.header{
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-left: 20px;
+	background-color: rgba(255, 255, 255, .5);
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 1085px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.content_report{
+	font-size: 15px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	background-color: rgba(255, 255, 255, .5);
+	font-family: century gothic;
+	border-collapse: collapse;
+	width: 820px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.select{
+	margin-left: 30px;
+}
+
+.printReport{
+	margin-left: 20px;
+}
+
+.content_position{
+	margin-top: 15px;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.bookingThisDay{
+	margin-top: 15px;
+}
+
+.aveBooking{
+	margin-top: 15px;
+}
+
+.transactionThisDay{
+	margin-top: -375px;
+	margin-left: 220px;
+}
+
+.aveTransaction{
+	margin-top: 15px;
+	margin-left: 220px;
+}
+
+.serviceSuggestion{
+	margin-top: 15px;
+}
+
+.reportsThisDay{
+	margin-top: -245px;
+	margin-left: 440px;
+}
+
+.aveReports{
+	margin-top: 15px;
+	margin-left: 440px;
+}
+
+.services-availed {
+	margin-top: 15px;
+	left: 260px;
+	width:645px;
+	background-color: rgba(255, 255, 255, .5);
+	padding-top: 24px;
+	padding-bottom: 29px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+.report-transaction {
+	margin-top: 15px;
+	width:645px;
+	background-color: rgba(255, 255, 255, .5);
+	padding-top: 24px;
+	padding-bottom: 29px;
+	margin-bottom: 20px;
+	box-shadow: 3px 3px 16px 5px #DCDCDC;
+}
+
+#logo{
+	width: 80px;
+}
+
+.logo{
+	padding-right: 20px;
+}

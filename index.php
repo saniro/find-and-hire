@@ -105,6 +105,9 @@
 		case 'accept_requirements':
 			require("Views/admin-acceptRequirements.php");
 			break;
+		case 'serviceReports':
+			require("Views/admin-serviceReports.php");
+			break;
 		case 'sidebar':
 			require("Views/admin-sidebar.php");
 			break;
