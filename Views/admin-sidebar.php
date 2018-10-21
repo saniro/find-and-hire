@@ -18,6 +18,30 @@
     <!-- <a href="index?route=request">REQUEST PROFILE PICTURE</a> -->
     <a href="index?route=accept_requirements">REQUIREMENTS</a>
   </div>
+  <a href="index?route=sham">
+    <?php 
+      $sqlCountCancelled = "SELECT count(userID) AS count FROM users WHERE count_cancelled > 2";
+      $stmt = $con->prepare($sqlCountCancelled);
+      $stmt->execute();
+      $resultsCount = $stmt->fetch();
+      $count_cancelled = $resultsCount['count'];
+
+      if(($count_cancelled > 0)&&($count_cancelled < 101)){
+        ?>
+        <span class="badge">
+          <?php echo $count_cancelled;?>
+        </span>
+      <?php
+      }
+      elseif($count_cancelled > 100){
+        ?>
+        <span class="badge">
+          <?php echo "100+";?>
+        </span>
+      <?php
+      }
+      ?>SHAM LIST
+  </a>
   <a href="index?route=booking">BOOKING</a>
   <a href="index?route=transactions">TRANSACTION</a>
   <button class="sub-menu">MAINTENANCE 

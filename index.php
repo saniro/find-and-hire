@@ -108,6 +108,9 @@
 		case 'serviceReports':
 			require("Views/admin-serviceReports.php");
 			break;
+		case 'sham':
+			require("Views/admin-shamlist.php");
+			break;
 		case 'sidebar':
 			require("Views/admin-sidebar.php");
 			break;

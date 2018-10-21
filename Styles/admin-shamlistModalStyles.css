@@ -1,0 +1,149 @@
+.viewModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 30px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModal-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    margin-bottom: 80px;
+}
+
+/* The Close Button */
+.viewClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewClose:hover,
+.viewClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewModalYesNo {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModalYesNo-content {
+	font-family: Century Gothic;
+	font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    padding-bottom: 20px;
+}
+
+/* The Close Button */
+.viewCloseYesNo {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewCloseYesNo:hover,
+.viewCloseYesNo:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewModalVerify {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 30px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.viewModalVerify-content {
+    font-family: Century Gothic;
+    font-size: 18px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    padding-bottom: 20px;
+    margin-bottom: 80px;
+}
+
+/* The Close Button */
+.viewCloseVerify {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.viewCloseVerify:hover,
+.viewCloseVerify:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.details div{
+	margin-bottom: 10px;
+}
+.titleDetails{
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+.infoDetails{
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+.noButton{
+	margin-left: 40px;
+}
+.profilePic{
+	width: 150px;
+	height: 150px;
+}
+.profilePicDivision{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.profilePicContent{
+	padding-left: 35%;
+}
