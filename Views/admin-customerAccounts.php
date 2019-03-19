@@ -283,7 +283,7 @@
     							profilepicture, 
     							concat (lastName, ', ', firstName, ' ', middleName) AS name,
     							concat(houseNo, ', ', street, ', ', barangay, ', ', city) AS address, 
-    							(CASE WHEN gender = 1 THEN 'Male' WHEN gender = 0 THEN 'Female' END) AS gender, DATE_FORMAT(birthDate,'%b %d, %Y') AS birthDate, email, contact, (SELECT count(reportsID) FROM reports WHERE reportedID = userID) AS reportNo FROM users AS US, address AS AD WHERE (US.addressID = AD.addressID) AND userID = (:userID)";
+    							(CASE WHEN gender = 1 THEN 'Male' WHEN gender = 0 THEN 'Female' END) AS gender, DATE_FORMAT(birthDate,'%b %d, %Y') AS birthDate, email, contact, (SELECT count(reportsID) FROM reports WHERE reportedID = userID) AS reportNo, emergencyPerson, emergencyNumber, emergencyRelationship FROM users AS US, address AS AD WHERE (US.addressID = AD.addressID) AND userID = (:userID)";
 
     							$stmt = $con->prepare($sqlInfoModal);
 								$stmt->bindParam(':userID', $_GET['userID'], PDO::PARAM_INT);
@@ -304,6 +304,9 @@
 			    				$modalInfoAge = date_diff(date_create($modalInfoBirthdate), date_create('now'))->y;
 			    				$modalInfoEmail = $rowInfoModal["email"];
 			    				$modalInfoContact = $rowInfoModal["contact"];
+			    				$modalInfoEmergencyPerson = $rowInfoModal["emergencyPerson"];
+			    				$modalInfoEmergencyNumber = $rowInfoModal["emergencyNumber"];
+			    				$modalInfoEmergencyRelationship = $rowInfoModal["emergencyRelationship"];
 			    				$modalInfoReportNo = $rowInfoModal["reportNo"];
 						}
     					?>
@@ -348,6 +351,18 @@
 						<tr class = "trInputs">
 						    <td class = "tdName">Contact Number</td>
 						    <td class = "tdInput"><?php echo $modalInfoContact; ?></td>
+						</tr>
+						<tr class = "trInputs">
+						    <td class = "tdName">Emergency Contact Person</td>
+						    <td class = "tdInput"><?php echo $modalInfoEmergencyPerson; ?></td>
+						</tr>
+						<tr class = "trInputs">
+						    <td class = "tdName">Emergency Contact No</td>
+						    <td class = "tdInput"><?php echo $modalInfoEmergencyNumber; ?></td>
+						</tr>
+						<tr class = "trInputs">
+						    <td class = "tdName">Emergency Relationship</td>
+						    <td class = "tdInput"><?php echo $modalInfoEmergencyRelationship; ?></td>
 						</tr>
 					</table>
 					<div class = "transactionAndReportBtn">

@@ -313,7 +313,7 @@
     							DATE_FORMAT(birthDate,'%b %d, %Y') AS birthDate, 
     							email, 
     							flag, 
-    							contact 
+    							contact, emergencyPerson, emergencyNumber, emergencyRelationship 
     							FROM users AS US 
     							WHERE type = 2 AND userID = (:handymanID)";
 
@@ -341,6 +341,9 @@
 			    				$modalInfoAge = date_diff(date_create($modalInfoBirthdate), date_create('now'))->y;
 			    				$modalInfoEmail = $rowInfoModal["email"];
 			    				$modalInfoContact = $rowInfoModal["contact"];
+			    				$modalInfoEmergencyPerson = $rowInfoModal["emergencyPerson"];
+			    				$modalInfoEmergencyNumber = $rowInfoModal["emergencyNumber"];
+			    				$modalInfoEmergencyRelationship = $rowInfoModal["emergencyRelationship"];
 							}
     					?>
     					<div class = "profilePicContent">
@@ -404,6 +407,18 @@
 								<tr class = "trInputs">
 								    <td class = "tdName">Contact Number</td>
 								    <td class = "tdInput"><?php echo $modalInfoContact; ?></td>
+								</tr>
+								<tr class = "trInputs">
+								    <td class = "tdName">Emergency Contact Person</td>
+								    <td class = "tdInput"><?php echo $modalInfoEmergencyPerson; ?></td>
+								</tr>
+								<tr class = "trInputs">
+								    <td class = "tdName">Emergency Contact No</td>
+								    <td class = "tdInput"><?php echo $modalInfoEmergencyNumber; ?></td>
+								</tr>
+								<tr class = "trInputs">
+								    <td class = "tdName">Emergency Relationship</td>
+								    <td class = "tdInput"><?php echo $modalInfoEmergencyRelationship; ?></td>
 								</tr>
 							</table>
 						</div>
